@@ -145,7 +145,8 @@ body {
   padding: 10px;
   cursor: pointer;
   background-color: rgb(0, 0, 0);
-  color:white;
+  color: rgb(0, 255, 8);
+  text-shadow: 0 0 10px #91e56f;
 }
 
 .bnt-change:hover {
@@ -209,4 +210,30 @@ input:focus {
   background-position: center;
   background-repeat: no-repeat;
   background-color: black;
+}
+
+
+
+.footer {
+  height: 200px;
+  width: 100%;
+  background-color: black;
+  padding: 50px;
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+}
+
+.footer h2 {
+  border-bottom: 1px solid rgb(0, 255, 8);
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+  color: rgb(0, 255, 8);
+  text-shadow: 0 0 10px #91e56f;
+}
+
+.footer h4 {
+  color: rgb(0, 255, 8);
+  text-shadow: 0 0 15px #91e56f;
 }

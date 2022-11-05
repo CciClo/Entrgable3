@@ -37,10 +37,14 @@ const Location = ({location,setLocation}) => {
         </div>
       </div>
 
-      <div className='character-container' >
+      <main className='character-container' >
         {location.residents?.map( urlCharacter => (<Character urlCharacter={urlCharacter} key={urlCharacter} />) )}
-      </div>
+      </main>
 
+      <footer className='footer'>
+        <h2> Developers </h2>
+        <h4>Oscar Tandioy  &  Jesús Escalona</h4>
+      </footer>
     </div>
   );
 };
