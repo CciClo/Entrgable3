@@ -30,6 +30,13 @@ h1 {
   z-index: 1;
 }
 
+@media (max-width: 500px) {
+  h1 {
+    font-size: 22vw;
+    top: 40px;
+  }
+}
+
 h2 {
   font-family: 'Manrope', sans-serif;
   font-weight: 600;
@@ -62,10 +69,22 @@ body {
   background-color: var(--background-color-character);
 }
 
+@media (max-width: 500px) {
+  .location-container {
+    width: 94%;
+  }
+}
+
 .location-container div {
   width: 100%;
   display: flex;
   justify-content: space-between;
+}
+
+@media (max-width: 500px) {
+  .location-container div  {
+    font-size: 2.3vw;
+  }
 }
 
 /* character */
@@ -75,6 +94,14 @@ body {
   grid-template-columns: repeat(2,1fr);
   gap: 4vw;
   padding: 4vw;
+}
+
+@media (max-width: 500px) {
+  .character-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8vw;
+  }
 }
 
 .character {
@@ -94,6 +121,12 @@ body {
 
 .features {
   padding: 1vw;
+}
+
+@media (max-width: 500px) {
+  .features {
+    padding: 4vw;
+  }
 }
 
 .features h3 {
@@ -141,12 +174,20 @@ body {
 /* Boton change */
 
 .bnt-change {
-  width: 50vw;
+  width: 35vw;
   padding: 10px;
   cursor: pointer;
   background-color: rgb(0, 0, 0);
   color: rgb(0, 255, 8);
   text-shadow: 0 0 10px #91e56f;
+  font-size: 1.2vw;
+}
+
+@media (max-width: 500px) {
+  .bnt-change {
+    font-size: 3vw;
+    width: 90vw;
+  }
 }
 
 .bnt-change:hover {
@@ -182,6 +223,12 @@ body {
   text-align: center;
   border: none;
   color: black;
+}
+
+@media (max-width: 500px) {
+  .container-show-location input {
+    width: 85vw;
+  }
 }
 
 input:focus {
