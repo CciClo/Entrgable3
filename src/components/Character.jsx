@@ -18,7 +18,7 @@ const Character = ({urlCharacter}) => {
 
       <div className='features' >
         <h3>
-          Name: {character.name}
+          {character.name}
         </h3>
       </div>
 
@@ -30,19 +30,35 @@ const Character = ({urlCharacter}) => {
             {character.status}
           </h4>
         </div>
-        
+
+        <p>
+          Specie:
+        </p>
         <h4>
-          Specie: {character.species}
+          {character.species}
         </h4>
+
+        <p>
+          Origin:
+        </p>
         <h4>
-          Origin: {character.origin?.name}
+          {character.origin?.name}
         </h4>
+
+        <p>
+          Type:
+        </p>
         <h4>
-          Type: {character.type}
+          {character.type}
         </h4>
+
+        <p>
+          Number of episodes:
+        </p>
         <h4>
-          Number of episodes: {character.episode?.length}
+          {character.episode?.length}
         </h4>
+
       </div>
 
     </div>
