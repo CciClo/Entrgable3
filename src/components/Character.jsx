@@ -23,12 +23,14 @@ const Character = ({urlCharacter}) => {
       </div>
 
       <div className='features' >
+
         <div className='status' >
           <div className={ `${ character.status === "Alive"? 'green' : character.status==='Dead'? "red" : "gray" } circle` } ></div>
           <h4>
             {character.status}
           </h4>
         </div>
+        
         <h4>
           Specie: {character.species}
         </h4>

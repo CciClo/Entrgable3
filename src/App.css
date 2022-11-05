@@ -1,3 +1,7 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Kolker+Brush&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;600&display=swap');
+
 :root {
   --background-color: #05292e ;
   --background-color-character: #062226;
@@ -10,8 +14,23 @@
   /* color: azure; */
 }
 
+h1 {
+  font-family: 'Kolker Brush', cursive;
+  font-size: 120px;
+  position: absolute;
+  color: rgb(0, 255, 26);
+  text-shadow: 1px 1px 4px rgb(0, 0, 0);
+}
+
+h2 {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 600;
+}
+
 body {
   background-color: var(--background-color);
+  font-family: 'Manrope', sans-serif;
+  font-weight: 200;
 }
 
 .container-of-everything {
@@ -126,15 +145,23 @@ body {
 }
 
 .container-show-location input {
-  height: 26px;
-  width: 200px;
+  height: 40px;
+  width: 400px;
   text-align: center;
+  border: none;
+  
+}
+
+input:focus {
+  outline: none !important;
+  border:1px solid rgb(0, 255, 8);
+  box-shadow: 0 0 10px #91e56f;
 }
 
 .show-location {
   height: 30vw;
   position: absolute;
-  transform: translateY(30px);
+  transform: translateY(45px);
   overflow-y:auto;
   overflow-x: hidden;
 }
