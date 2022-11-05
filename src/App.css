@@ -1,0 +1,140 @@
+:root {
+  --background-color: #05292e ;
+  --background-color-character: #062226;
+}
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  /* color: azure; */
+}
+
+body {
+  background-color: var(--background-color);
+}
+
+.container-of-everything {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Location */
+
+.location-container {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  gap: 40px;
+  align-items: center;
+  color: azure;
+}
+
+.location-container div {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* character */
+
+.character-container {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 4vw;
+  padding: 4vw;
+}
+
+.character {
+  background: var(--background-color-character);
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.character img {
+  width: 100%;
+}
+
+.features {
+  padding: 1vw;
+}
+
+/* Status */
+
+.status {
+  display: flex;
+  align-items: center;
+  gap: 1vw;
+}
+
+.circle {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: flex;
+}
+
+.red {
+  background-color: red;
+}
+
+.green {
+  background-color: green;
+}
+
+.gray {
+  background-color: gray;
+}
+
+/* Boton change */
+
+.bnt-change {
+  width: 50vw;
+  padding: 10px;
+  cursor: pointer;
+  background-color: rgb(0, 0, 0);
+  color:white;
+}
+
+.bnt-change:hover {
+  background-color: rgb(80, 80, 80);
+}
+
+/* show location */
+
+.background-search{
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  background-image: url('https://image.tmdb.org/t/p/original/bgd8mtXQ3titH9aBi1baVK9HJU6.jpg');
+  background-size: 100vh;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color:  black;
+}
+
+.container-show-location{
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container-show-location input {
+  height: 26px;
+  width: 200px;
+  text-align: center;
+}
+
+.show-location {
+  height: 30vw;
+  position: absolute;
+  transform: translateY(30px);
+  overflow-y:auto;
+  overflow-x: hidden;
+}
