@@ -42,8 +42,14 @@ const Location = ({location,setLocation}) => {
       </main>
 
       <footer className='footer'>
+
         <h2> Developers </h2>
         <h4>Oscar Tandioy  &  Jesús Escalona</h4>
+
+        <a href="https://github.com/CciClo/Entrgable3" target="_blank">
+          <i class="fa-brands fa-github"></i>
+        </a>
+        
       </footer>
     </div>
   );

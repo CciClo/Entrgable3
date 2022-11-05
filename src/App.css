@@ -259,10 +259,9 @@ input:focus {
   background-color: black;
 }
 
-
+/* Footer */
 
 .footer {
-  height: 200px;
   width: 100%;
   background-color: black;
   padding: 50px;
@@ -283,4 +282,9 @@ input:focus {
 .footer h4 {
   color: rgb(0, 255, 8);
   text-shadow: 0 0 15px #91e56f;
+}
+
+.fa-github {
+  font-size: 40px;
+  margin: 40px;
 }
