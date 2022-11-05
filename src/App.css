@@ -165,3 +165,17 @@ input:focus {
   overflow-y:auto;
   overflow-x: hidden;
 }
+
+
+
+/* Loader */
+
+.loader {
+  width: 100%;
+  height: 100vh;
+  background-image: url("https://github.com/CciClo/assets/raw/main/loaderPage/loader-whithe-shadoww-blue-black.gif");
+  background-size: 100px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: black;
+}

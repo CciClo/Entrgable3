@@ -3,9 +3,9 @@ import React, { useEffect, useState } from 'react';
 import Character from './Character';
 import SearchLocation from './SearchLocation';
 
-const Location = () => {
+const Location = ({location,setLocation}) => {
 
-  const [ location,setLocation ] = useState({});
+
 
   const changeLocation = (Id) => {
     console.log(location)
@@ -13,11 +13,6 @@ const Location = () => {
       .then(res => setLocation(res.data))
   };
 
-  useEffect(() => {
-    const randomId = Math.floor(Math.random() * 125)+1
-    axios.get(`https://rickandmortyapi.com/api/location/${randomId}`)
-      .then(res => setLocation(res.data))
-  }, []);
 
   return (
     <div className='container-of-everything'>
