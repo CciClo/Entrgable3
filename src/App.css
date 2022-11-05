@@ -27,6 +27,7 @@ h1 {
   position: absolute;
   color: rgb(0, 255, 26);
   text-shadow: 1px 1px 4px rgb(0, 0, 0);
+  z-index: 1;
 }
 
 h2 {
@@ -84,7 +85,7 @@ body {
 }
 
 .character:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 .character img {
@@ -102,19 +103,21 @@ body {
 
 /* Status */
 
+
 .status {
   width: 150px;
   height: 30px;
   border-radius: 0 5px 5px 0;
-  display: flex;
+  display:flex;
   align-items: center;
   gap: 1vw;
   position: absolute;
-  top: 20px;
+  top: 15px;
   left: 0;
   padding-left: 10px;
   background-color: var(--background-color-character);
 }
+
 
 .circle {
   width: 10px;
@@ -162,6 +165,7 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-color:  black;
+  z-index: 1;
 }
 
 .container-show-location{
@@ -176,7 +180,7 @@ body {
   width: 400px;
   text-align: center;
   border: none;
-  
+  color: black;
 }
 
 input:focus {

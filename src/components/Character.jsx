@@ -5,14 +5,14 @@ import { useEffect } from 'react';
 const Character = ({urlCharacter}) => {
 
   const [ character,setCharacter ] = useState({});
-
+  
   useEffect(() => {
     axios.get(urlCharacter)
       .then(obtainedCharacter => setCharacter(obtainedCharacter.data))
   }, []);
 
   return (
-    <div className='character'>
+    <div className={`character ${character.name}`}>
 
       <img src={character.image} alt="Character image" />
 
