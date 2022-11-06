@@ -3,15 +3,27 @@ import React, { useEffect, useState } from 'react';
 import Character from './Character';
 import SearchLocation from './SearchLocation';
 
-const Location = ({location,setLocation}) => {
+const Location = ({ location , setLocation }) => {
 
-
+  const [ ready , setReady ] = useState(false)
+  const [ numberOfPages , setNumberOfPages ] = useState([])
 
   const changeLocation = (Id) => {
     console.log(location)
     axios.get(`https://rickandmortyapi.com/api/location/${Id}`)
       .then(res => setLocation(res.data))
   };
+
+  useEffect(() => {
+
+    location && setReady(true)
+    
+    switch ( ready ) {
+      case true:
+        console.log("hay algo dentro")
+    }
+
+  }, [location])
 
 
   return (
@@ -47,7 +59,7 @@ const Location = ({location,setLocation}) => {
         <h4>Oscar Tandioy  &  Jesús Escalona</h4>
 
         <a href="https://github.com/CciClo/Entrgable3" target="_blank">
-          <i class="fa-brands fa-github"></i>
+          <i className="fa-brands fa-github"></i>
         </a>
         
       </footer>

@@ -7,7 +7,6 @@ const SearchLocation = ({changeLocation}) => {
 
   const [ searchLocation,setSearchLocation ] =useState('');
   const [ locations,setLocations ] = useState({});
-  // const [ page1,setPage1 ] = useState(1);
 
   useEffect(() => {
     let ind = [];
