@@ -5,8 +5,7 @@ import SearchLocation from './SearchLocation';
 
 const Location = ({ location , setLocation }) => {
 
-  const [ ready , setReady ] = useState(false)
-  const [ numberOfPages , setNumberOfPages ] = useState([])
+
 
   const changeLocation = (Id) => {
     console.log(location)
@@ -14,16 +13,7 @@ const Location = ({ location , setLocation }) => {
       .then(res => setLocation(res.data))
   };
 
-  useEffect(() => {
 
-    location && setReady(true)
-    
-    switch ( ready ) {
-      case true:
-        console.log("hay algo dentro")
-    }
-
-  }, [location])
 
 
   return (
