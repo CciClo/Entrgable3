@@ -35,7 +35,9 @@ const Location = ({ location , setLocation }) => {
       </div>
 
       <main>
-        <PageContainer location={location} />
+        { location &&
+          <PageContainer location={location} />
+        }
       </main>
 
       <footer className='footer'>
