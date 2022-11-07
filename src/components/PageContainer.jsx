@@ -14,39 +14,34 @@ const PageContainer = ({ location }) => {
   }
 
   useEffect(() => {
-
-    location && setReady(true);
     
-    switch ( ready ) {
-      case true:
-        if( location.residents.length > 8 ) {
-          let pages = [];
-          let page = [];
-          let counter = 0;
-
-          for(let i = 0; i <= location.residents.length ; i++ ) {
-            if ( counter <= 7 && location.residents[i] ) {
-              page.push(location.residents[i])
-              counter++
-            }else if (counter > 7) {
-              i--
-              counter = 0;
-              pages.push(page);
-              page = [];
-            }else {
-              pages.push(page);
-              setSelectedPage(0)
-              break
-            }
-          }
-          setNumberOfPages(pages)
-          setIsVisibleButton(pages)
-          
+    if( location.residents.length > 8 ) {
+      let pages = [];
+      let page = [];
+      let counter = 0
+      for(let i = 0; i <= location.residents.length ; i++ ) {
+        if ( counter <= 7 && location.residents[i] ) {
+          page.push(location.residents[i])
+          counter++
+        }else if (counter > 7) {
+          i--
+          counter = 0;
+          pages.push(page);
+          page = [];
         }else {
-          setNumberOfPages(location.residents)
-          setIsVisibleButton(false)
+          pages.push(page);
+          setSelectedPage(0)
+          break
         }
-    };
+      }
+      setNumberOfPages(pages)
+      setIsVisibleButton(pages)
+      
+    }else {
+      setNumberOfPages(location.residents)
+      setIsVisibleButton(false)
+    }
+    
 
   }, [location]);
 
