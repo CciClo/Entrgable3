@@ -36,8 +36,6 @@ const SearchLocation = ({changeLocation}) => {
 
   }, []);
 
-  console.log(locations)
-
   return (
     <div className='background-search'>
       

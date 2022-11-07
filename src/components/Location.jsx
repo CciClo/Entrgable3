@@ -1,20 +1,59 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import Character from './Character';
+import Page from './Page';
 import SearchLocation from './SearchLocation';
 
 const Location = ({ location , setLocation }) => {
 
-
+  const [ ready , setReady ] = useState(false);
+  const [ numberOfPages , setNumberOfPages ] = useState([]);
+  const [ selectedPage , setSelectedPage ] = useState(0);
 
   const changeLocation = (Id) => {
-    console.log(location)
     axios.get(`https://rickandmortyapi.com/api/location/${Id}`)
       .then(res => setLocation(res.data))
   };
 
+  const changePage = (page) => {
+    setSelectedPage(page)
+  }
 
 
+  useEffect(() => {
+
+    location && setReady(true);
+    
+    switch ( ready ) {
+      case true:
+        if( location.residents.length > 8 ) {
+          let pages = [];
+          let page = [];
+          let counter = 0;
+
+          for(let i = 0; i <= location.residents.length ; i++ ) {
+            if ( counter <= 7 && location.residents[i] ) {
+              page.push(location.residents[i])
+              counter++
+            }else if (counter > 7) {
+              i--
+              counter = 0;
+              pages.push(page);
+              page = [];
+            }else {
+              pages.push(page);
+            }
+          }
+          setNumberOfPages(pages)
+          
+        }else {
+          setNumberOfPages(location.residents)
+        }
+    };
+
+  }, [location]);
+
+  // (numberOfPages.map(num => console.log(num) ))
 
   return (
     <div className='container-of-everything'>
@@ -39,8 +78,16 @@ const Location = ({ location , setLocation }) => {
         </div>
       </div>
 
-      <main className='character-container' >
-        {location.residents?.map( urlCharacter => (<Character urlCharacter={urlCharacter} key={urlCharacter} />) )}
+      <main>
+
+        {numberOfPages.map( (actualPage,index) => (<Page actualPage={ actualPage } index={index} selectedPage={selectedPage} key={actualPage} className={index} />))}
+
+        <div className='selectedPage'>
+          { numberOfPages.map( ( actualPage, index ) => (
+            <button onClick={ () => changePage(index) } className='btn-selectedPage' >{index+1}</button>
+          )  ) }
+        </div>
+        
       </main>
 
       <footer className='footer'>

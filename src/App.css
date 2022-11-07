@@ -59,6 +59,10 @@ body {
 
 /* Location */
 
+main {
+  width: 100%;
+}
+
 .location-container {
   width: 80%;
   display: flex;
@@ -90,9 +94,11 @@ body {
 /* character */
 
 .character-container {
+  width: 70%;
+  margin: auto;
   display: grid;
   grid-template-columns: repeat(2,1fr);
-  gap: 4vw;
+  gap: 6vw;
   padding: 4vw;
 }
 
@@ -287,4 +293,23 @@ input:focus {
 .fa-github {
   font-size: 40px;
   margin: 40px;
+}
+
+/* selected Page */
+
+.selectedPage {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  overflow-x: auto;
+}
+
+.btn-selectedPage {
+  width: 40px;
+  color: black;
+  background-color: #42963d;
+  border: none;
+  border-radius: 20px;
 }
