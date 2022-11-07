@@ -9,7 +9,7 @@ const Character = ({urlCharacter}) => {
   useEffect(() => {
     axios.get(urlCharacter)
       .then(obtainedCharacter => setCharacter(obtainedCharacter.data))
-  }, []);
+  }, [urlCharacter]);
 
   return (    
     <div className={`character ${character.name}`}>

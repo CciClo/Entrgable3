@@ -121,6 +121,12 @@ main {
   transform: scale(1.05);
 }
 
+@media (max-width: 500px) {
+  .character{
+    transform: scale(1);
+  }
+}
+
 .character img {
   width: 100%;
 }
@@ -301,15 +307,30 @@ input:focus {
   width: 80%;
   margin: auto;
   display: flex;
+  padding: 5px;
   gap: 10px;
   justify-content: space-between;
+  align-items: center;
   overflow-x: auto;
+}
+
+@media (max-width: 500px) {
+  .selectedPage {
+    width: 90%;
+    gap: 5px;
+  }
 }
 
 .btn-selectedPage {
   width: 40px;
+  padding: 5px;
   color: black;
   background-color: #42963d;
-  border: none;
-  border-radius: 20px;
+  border: 2px solid #91e56f;
+}
+
+.buttomSelect {
+  background-color: #c6d548;
+  transform: scale(1.2);
+  border: 2px solid #42963d;
 }

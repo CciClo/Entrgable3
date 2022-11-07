@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import Character from './Character';
+import PageContainer from './PageContainer';
 import SearchLocation from './SearchLocation';
 
 const Location = ({ location , setLocation }) => {
@@ -34,8 +34,8 @@ const Location = ({ location , setLocation }) => {
         </div>
       </div>
 
-      <main className='character-container' >
-        {location.residents?.map( urlCharacter => (<Character urlCharacter={urlCharacter} key={urlCharacter} />) )}
+      <main>
+        <PageContainer location={location} />
       </main>
 
       <footer className='footer'>

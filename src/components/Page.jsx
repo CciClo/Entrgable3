@@ -1,16 +1,27 @@
 import React from 'react';
+import { useEffect } from 'react';
+import { useState } from 'react';
 import Character from './Character';
 
-const Page = ({ actualPage , index , selectedPage }) => {
-  console.log(actualPage)
+const Page = ({urlsCharacters,location}) => {
+  const [ urls , setUrls ] = useState([]);
+
+  useEffect(() => {
+    const idn = urlsCharacters;
+    setUrls(idn)
+  }, [urlsCharacters])
+
   return (
-    <>
-      { selectedPage == index &&
-      <div className='character-container'>
-        {actualPage.map( urlCharacter => (<Character urlCharacter={urlCharacter} selectedPage={selectedPage} index={index} key={urlCharacter} />) )}
-      </div>
+    <div className='character-container'>
+      { urls.length > 1 ?
+        urls.map(urlCharacter =>
+          <Character urlCharacter={urlCharacter} key={urlCharacter} />
+        ): urls.length > 0 ? 
+          <Character urlCharacter={urls} key={urls} />
+        :
+        <></>
       }
-    </>
+    </div>
   );
 };
 
